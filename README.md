@@ -1,5 +1,9 @@
 # CSX42: Assignment 1
+<<<<<<< HEAD
 ## Name: 
+=======
+## Name: Aaditya Sakharam Patil
+>>>>>>> da272e877f71e42f8fc1d3b0e27771ac9d523418
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
@@ -45,6 +49,10 @@ I am involved in plagiarism or cheating an official form will be
 submitted to the Academic Honesty Committee of the Watson School to
 determine the action that needs to be taken. "
 
+<<<<<<< HEAD
 Date: -- 
+=======
+Date: 09/18/2018
+>>>>>>> da272e877f71e42f8fc1d3b0e27771ac9d523418
 
 
