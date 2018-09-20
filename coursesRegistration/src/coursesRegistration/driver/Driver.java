@@ -1,4 +1,8 @@
 package coursesRegistration.driver;
+import java.util.ArrayList;
+
+import coursesRegistration.scheduler.Courses;
+import coursesRegistration.scheduler.Student;
 import coursesRegistration.util.FileProcessor;
 
 /**
@@ -18,13 +22,7 @@ public class Driver {
 			System.err.println("Error: Incorrect number of arguments. Program accepts 2 argumnets.");
 			System.exit(0);
 		}
-		
 		FileProcessor.read(args[0], args[1]);
-<<<<<<< HEAD
-=======
-		
-		//System.out.println("Hello World! Lets get started with the assignment");
->>>>>>> da272e877f71e42f8fc1d3b0e27771ac9d523418
 
 	}
 }
