@@ -1,7 +1,6 @@
 package coursesRegistration.scheduler;
 
 import java.util.ArrayList;
-
 import coursesRegistration.util.Results;
 
 public class Allocation {
@@ -11,43 +10,78 @@ public class Allocation {
 	public static void allocate(ArrayList<Courses> courseList, ArrayList<Student> studList)
 	{
 		
-		
-		
-//		for(int i=0 ; i< courseList.size(); i++)
-//		{
-//			System.out.println(courseList.get(i).capacity);
-//		}
-		
 		for(int i=0 ; i< studList.size(); i++)
 		{
 			Results res = new Results();
-			
 			res.setStudentName(studList.get(i).id);
+			
 //			System.out.println(studList.get(i).p1);
 			switch (studList.get(i).p1)
 			{
 			case "A":
-				res.setCourse1(studList.get(i).p1);
-				break;
+				if(courseList.get(0).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(0).time);
+					courseList.get(0).capacity--;
+					break;
+				}
+				else
+					break;
 			case "B":
-				res.setCourse1(studList.get(i).p1);
-				break;
+				if(courseList.get(1).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(1).time);
+					courseList.get(1).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "C":
-				res.setCourse1(studList.get(i).p1);
-				break;
+				if(courseList.get(2).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(2).time);
+					courseList.get(2).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "D":
-				res.setCourse1(studList.get(i).p1);
-				break;
+				if(courseList.get(3).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(3).time);
+					courseList.get(3).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "E":
-				res.setCourse1(studList.get(i).p1);
-				break;
+				if(courseList.get(4).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(4).time);
+					courseList.get(4).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "F":
-				res.setCourse1(studList.get(i).p1);
-				break;	
+				if(courseList.get(5).capacity>0)
+				{
+					res.setCourse1(studList.get(i).p1);
+					res.setTime1(courseList.get(5).time);
+					courseList.get(5).capacity--;
+					break;
+				}
+				else
+					break;	
 			
 			default: 
 				System.out.println("invalid course");
@@ -56,30 +90,161 @@ public class Allocation {
 			}
 			
 			
+			
+			//*****************************************************************************
+			//*****************************************************************************
 			switch (studList.get(i).p2)
 			{
 			case "A":
-				res.setCourse2(studList.get(i).p2);
+				
+				if(res.getCourse1()!=null && courseList.get(0).capacity>0)
+				{
+					
+					if(res.getTime1()!=courseList.get(0).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(0).time);
+						courseList.get(0).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(0).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(0).time);
+						courseList.get(0).capacity--;
+					}
+					else
+						break;
+				}
 				break;
 			case "B":
-				res.setCourse2(studList.get(i).p2);
+				if(res.getCourse1()!=null && courseList.get(1).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(1).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(1).time);
+						courseList.get(1).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(1).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(1).time);
+						courseList.get(1).capacity--;
+					}
+					else
+						break;
+				}
 				break;
 				
 			case "C":
-				res.setCourse2(studList.get(i).p2);
+				if(res.getCourse1()!=null && courseList.get(2).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(2).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(2).time);
+						courseList.get(2).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(2).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(2).time);
+						courseList.get(2).capacity--;
+					}
+					else
+						break;
+				}
 				break;
 				
 			case "D":
-				res.setCourse2(studList.get(i).p2);
+				if(res.getCourse1()!=null && courseList.get(3).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(3).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(3).time);
+						courseList.get(3).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(3).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(3).time);
+						courseList.get(3).capacity--;
+					}
+					else
+						break;
+				}
 				break;
 				
 			case "E":
-				res.setCourse2(studList.get(i).p2);
+				if(res.getCourse1()!=null && courseList.get(4).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(4).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(4).time);
+						courseList.get(4).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(4).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(4).time);
+						courseList.get(4).capacity--;
+					}
+					else
+						break;
+				}
 				break;
-				
 			case "F":
-				res.setCourse2(studList.get(i).p2);
-				break;	
+
+				if(res.getCourse1()!=null && courseList.get(5).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(5).time)
+					{			
+						res.setCourse2(studList.get(i).p2);
+						res.setTime2(courseList.get(5).time);
+						courseList.get(5).capacity--;
+					}
+					else
+						break;
+				}
+				else 
+				{
+					if(courseList.get(5).capacity>0)
+					{			
+						res.setCourse1(studList.get(i).p2);
+						res.setTime1(courseList.get(5).time);
+						courseList.get(5).capacity--;
+					}
+					else
+						break;
+				}
+				break;
 			
 			default: 
 				System.out.println("invalid course");
@@ -87,30 +252,221 @@ public class Allocation {
 			
 			}
 			
+			
+			
+			
+			
+			//*****************************************************************************
+			//*****************************************************************************
 			switch (studList.get(i).p3)
 			{
 			case "A":
-				res.setCourse3(studList.get(i).p3);
-				break;
+				if(res.getCourse2()!=null && courseList.get(0).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(0).time && res.getTime1()!=courseList.get(0).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(0).time);
+						courseList.get(0).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(0).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(0).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(0).time);
+						courseList.get(0).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(0).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(0).time);
+					courseList.get(0).capacity--;
+					break;
+				}
+				else
+					break;
 			case "B":
-				res.setCourse3(studList.get(i).p3);
-				break;
+				if(res.getCourse2()!=null && courseList.get(1).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(1).time && res.getTime1()!=courseList.get(1).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(1).time);
+						courseList.get(1).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(1).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(1).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(1).time);
+						courseList.get(1).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(1).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(1).time);
+					courseList.get(1).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "C":
-				res.setCourse3(studList.get(i).p3);
-				break;
-				
+				if(res.getCourse2()!=null && courseList.get(2).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(2).time && res.getTime1()!=courseList.get(2).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(2).time);
+						courseList.get(2).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(2).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(2).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(2).time);
+						courseList.get(2).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(2).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(2).time);
+					courseList.get(2).capacity--;
+					break;
+				}
+				else
+					break;
 			case "D":
-				res.setCourse3(studList.get(i).p3);
-				break;
+				if(res.getCourse2()!=null && courseList.get(3).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(3).time && res.getTime1()!=courseList.get(3).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(3).time);
+						courseList.get(3).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(3).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(3).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(3).time);
+						courseList.get(3).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(3).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(3).time);
+					courseList.get(3).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "E":
-				res.setCourse3(studList.get(i).p3);
-				break;
+				if(res.getCourse2()!=null && courseList.get(4).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(4).time && res.getTime1()!=courseList.get(4).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(4).time);
+						courseList.get(4).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(4).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(4).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(4).time);
+						courseList.get(4).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(4).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(4).time);
+					courseList.get(4).capacity--;
+					break;
+				}
+				else
+					break;
 				
 			case "F":
-				res.setCourse3(studList.get(i).p3);
-				break;	
+				if(res.getCourse2()!=null && courseList.get(5).capacity>0)
+				{
+					if(res.getTime2()!=courseList.get(5).time && res.getTime1()!=courseList.get(5).time)
+					{			
+						res.setCourse3(studList.get(i).p3);
+						res.setTime3(courseList.get(5).time);
+						courseList.get(5).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(res.getCourse1()!=null && courseList.get(5).capacity>0)
+				{
+					if(res.getTime1()!=courseList.get(5).time)
+					{			
+						res.setCourse2(studList.get(i).p3);
+						res.setTime2(courseList.get(5).time);
+						courseList.get(5).capacity--;
+						break;
+					}
+					else
+						break;
+				}
+				else if(courseList.get(5).capacity>0)
+				{			
+					res.setCourse1(studList.get(i).p3);
+					res.setTime1(courseList.get(5).time);
+					courseList.get(5).capacity--;
+					break;
+				}
+				else
+					break;
 			
 			default: 
 				System.out.println("invalid course");
