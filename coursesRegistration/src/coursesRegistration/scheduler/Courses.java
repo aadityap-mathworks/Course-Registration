@@ -22,6 +22,12 @@ public class Courses
 	public void setTime(int time) {
 		this.time = time;
 	}
+	@Override
+	public String toString() {
+		return "Courses [cName=" + cName + ", capacity=" + capacity + ", time=" + time + ", toString()="
+				+ super.toString() + "]";
+	}
+	
 	
 	
 }
