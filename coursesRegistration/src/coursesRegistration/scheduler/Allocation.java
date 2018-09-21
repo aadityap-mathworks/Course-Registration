@@ -1,17 +1,15 @@
 package coursesRegistration.scheduler;
 
-import java.util.ArrayList;
-
 import coursesRegistration.util.FileProcessor;
 import coursesRegistration.util.Results;
 
 public class Allocation extends FileProcessor{
 
-	public static ArrayList<Results> finalList = new ArrayList<Results>();
 	
 	public static void allocate(String[] details)
 	{
-			Results res = new Results();
+			Registration res = new Registration();
+			Results r= new Results();
 			for(int i =1;i<7;i++)
 			{
 				res.setStudentName(details[0]);
@@ -233,15 +231,10 @@ public class Allocation extends FileProcessor{
 					break;
 				
 				}
-			
 			}
-			finalList.add(res);
-		
-		for(int a=0; a< finalList.size(); a++)
-		{
-			System.out.println(finalList.get(a).getStudentName()+" "+finalList.get(a).getCourse1()+" "+finalList.get(a).getCourse2()+" "+finalList.get(a).getCourse3());
-		}
-		
+			
+			r.finalResult(res);
+			
 	}
 
 	@Override

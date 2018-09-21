@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class FileProcessor {
 	
-	
 	public static ArrayList<Courses> courseList = new ArrayList<Courses>();
 	
 	public static void read(String cPrefFile, String cInfoFile)
@@ -40,13 +39,10 @@ public class FileProcessor {
 				courseList.add(cDetails);
 			}
 
-			int count=0;
 			while ((currentline = prefReader.readLine()) != null) 
 				{
 					//splitting the input file 
 					String part[] = currentline.split("[ ,:;]+");
-					count++;
-					System.out.println("line" +count);
 					//allocation
 					Allocation.allocate(part);
 					
@@ -63,11 +59,13 @@ public class FileProcessor {
 		catch (FileNotFoundException ex)
 	        {
 	            System.out.println("Cannot find the file '");
+	            System.exit(0);
 	            ex.printStackTrace();
 	        } 
 		catch (IOException ex)
 	        {
 	            System.out.println("Error occureed while reading the file '");
+	            System.exit(0);
 	            ex.printStackTrace();
 	
 	        }	
