@@ -1,11 +1,18 @@
 package coursesRegistration.scheduler;
 
+/**
+ * @author Aaditya Sakharam Patil
+ * Provides Structure to store Regitrstion details
+ */
 public class Registration {
 	String studentName;
 	String course1, course2, course3;
 	int time1, time2, time3;
 	
-	
+	/**
+	 * getters and setters
+	 *
+	 */
 	public int getTime1() {
 		return time1;
 	}

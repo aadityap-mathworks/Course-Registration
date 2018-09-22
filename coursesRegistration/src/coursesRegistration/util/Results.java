@@ -1,4 +1,10 @@
+
 package coursesRegistration.util;
+
+/**
+ * @author Aaditya Sakharam Patil
+ *
+ */
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,13 +15,22 @@ import coursesRegistration.scheduler.Registration;
 
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 	
+	//Structure to store final result
 	public static ArrayList<Registration> finalList = new ArrayList<Registration>();
 	
+	/**
+	 * method to store results
+	 *
+	 */
 	public void finalResult(Registration res)
 	{
 		finalList.add(res);
 	}
 	
+	/**
+	 * method to write results to output file
+	 *
+	 */
 	public void writeToFile() 
 	{
 		File out=null;
@@ -23,13 +38,24 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 		
 		try {
 			 
-			out= new File("/home/aadya/Downloads/aadityaSakharam_patil_assign1/coursesRegistration/src/registration_results.txt");
+			out= new File("/home/aadya/Desktop/csx42-f18-assign-1--apatil19/coursesRegistration/src/registration_results.txt");
 			fw = new FileWriter(out);
 			for(int a=0; a< finalList.size(); a++)
 			{
-				
-				fw.write(finalList.get(a).getStudentName()+" : "
-						+finalList.get(a).getCourse1()+", "+finalList.get(a).getCourse2()+", "+finalList.get(a).getCourse3()+"\n");
+				fw.write(finalList.get(a).getStudentName()+" : ");
+				if(finalList.get(a).getCourse1()!=null)
+				{
+					fw.write(finalList.get(a).getCourse1());
+				}
+				if(finalList.get(a).getCourse2()!=null)
+				{
+					fw.write(", "+finalList.get(a).getCourse2());
+				}
+				if(finalList.get(a).getCourse3()!=null)
+				{
+					fw.write(", "+finalList.get(a).getCourse3());
+				}
+				fw.write("\n");
 			}
 		}
 		catch (Exception e){
@@ -47,12 +73,28 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 		}
 		
 	}
-
+	
+	/**
+	 * method to display results on StdOut
+	 *
+	 */
 	public void displayStdOut() {
 		for(int a=0; a< finalList.size(); a++)
 		{
-			System.out.println(finalList.get(a).getStudentName()+" : "
-					+finalList.get(a).getCourse1()+", "+finalList.get(a).getCourse2()+", "+finalList.get(a).getCourse3());
+			System.out.print(finalList.get(a).getStudentName()+" : ");
+			if(finalList.get(a).getCourse1()!=null)
+			{
+				System.out.print(finalList.get(a).getCourse1());
+			}
+			if(finalList.get(a).getCourse2()!=null)
+			{
+				System.out.print(", "+finalList.get(a).getCourse2());
+			}
+			if(finalList.get(a).getCourse3()!=null)
+			{
+				System.out.print(", "+finalList.get(a).getCourse3());
+			}
+			System.out.println();
 		}
 	}
 	

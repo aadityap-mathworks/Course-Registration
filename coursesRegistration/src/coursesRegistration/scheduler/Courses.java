@@ -1,9 +1,17 @@
 package coursesRegistration.scheduler;
-
+/**
+ * @author Aaditya Sakharam Patil
+ * Provides Structure to store Course details
+ */
 public class Courses 
 {
 	String cName;
 	int capacity, time;
+	
+	/**
+	 * getters and setters
+	 *
+	 */
 	public String getcName() {
 		return cName;
 	}

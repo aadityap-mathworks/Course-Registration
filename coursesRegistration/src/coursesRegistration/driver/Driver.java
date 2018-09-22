@@ -1,7 +1,6 @@
 package coursesRegistration.driver;
 
 import java.io.File;
-
 import coursesRegistration.util.FileDisplayInterface;
 import coursesRegistration.util.FileProcessor;
 import coursesRegistration.util.Results;
@@ -12,11 +11,15 @@ import coursesRegistration.util.StdoutDisplayInterface;
  *
  */
 public class Driver {
+	/**
+	 * Main method
+	 * @param Commandline args
+	 * @return none
+	 */
 	public static void main(String[] args) {
-
 		try {
 			
-			/*
+			/**
 			 * As the build.xml specifies the arguments as argX, in case the
 			 * argument value is not given java takes the default value specified in
 			 * build.xml. To avoid that, below condition is used
@@ -27,6 +30,9 @@ public class Driver {
 				System.exit(0);
 			}
 			
+			/**
+			 *argument validation
+			 */
 			File file1 = new File(args[0]);
 			if (!file1.exists()) 
 			{
@@ -40,11 +46,16 @@ public class Driver {
 				System.exit(1);
 			}
 			
+			/**
+			 *Reads input files and calls the scheduler
+			 */
 			FileProcessor.read(args[0], args[1]);
 			
+			/**
+			 * Implementation of interface methods with casting
+			 */
 			FileDisplayInterface rslt1 = new Results();
 			((FileDisplayInterface) rslt1).writeToFile();
-			
 			StdoutDisplayInterface rslt2= new Results();
 			((StdoutDisplayInterface) rslt2).displayStdOut();
 			

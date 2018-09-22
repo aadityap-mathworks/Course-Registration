@@ -1,5 +1,8 @@
 package coursesRegistration.util;
-
+/**
+ * @author Aaditya Sakharam Patil
+ *
+ */
 import coursesRegistration.scheduler.Allocation;
 import coursesRegistration.scheduler.Courses;
 import java.io.BufferedReader;
@@ -10,32 +13,41 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 
+
 public class FileProcessor {
 	
+	//Structure to store course details
 	public static ArrayList<Courses> courseList = new ArrayList<Courses>();
 	
+	/**
+	 * read input files and call scheduler
+	 *
+	 */
 	public static void read(String cPrefFile, String cInfoFile)
 	{
 		try
 		{
-			//using file reader
+			//Read input files
 			FileReader pref = new FileReader(new File(cPrefFile));
 			FileReader info = new FileReader(new File(cInfoFile));
 			BufferedReader prefReader = new BufferedReader(pref);
 			BufferedReader infoReader = new BufferedReader(info);
 			String currentline;
 			
+			//store course detail to the structure
 			while ((currentline = infoReader.readLine()) != null) 
 			{
-				
 				Courses cDetails = new Courses();
 				
-				//splitting the input file with spaces
+				//splitting the input line
 				String part[] = currentline.split("[ ,:;-]+");
+				
+				//setting the values
 				cDetails.setcName(part[0]);
 				cDetails.setCapacity(Integer.parseInt(part[2]));
 				cDetails.setTime(Integer.parseInt(part[4]));
 				
+				//add details to arraylist
 				courseList.add(cDetails);
 			}
 
@@ -43,7 +55,8 @@ public class FileProcessor {
 				{
 					//splitting the input file 
 					String part[] = currentline.split("[ ,:;]+");
-					//allocation
+					
+					//calling scheduler to allocate courses
 					Allocation.allocate(part);
 					
 				}
@@ -69,6 +82,10 @@ public class FileProcessor {
 	            ex.printStackTrace();
 	
 	        }	
+		finally
+		{
+			
+		}
 		
 		
 	}

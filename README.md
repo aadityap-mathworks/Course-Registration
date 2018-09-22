@@ -2,8 +2,10 @@
 ## Name: Aaditya Sakharam Patil
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
+###Assuming you are in the directory containing this README
+-----------------------------------------------------------------------
 
-Following are the commands and the instructions to run ANT on your project.
+Following are the commands and the instructions to run ANT on project.
 #### Note: build.xml is present in coursesRegistration/src folder.
 
 -----------------------------------------------------------------------
@@ -11,27 +13,34 @@ Following are the commands and the instructions to run ANT on your project.
 
 ####Command: ant -buildfile coursesRegistration/src/build.xml clean
 
-Description: It cleans up all the .class files that were generated when you
-compiled your code.
+Description: It cleans up all the .class files that were generated when 
+you compiled your code.
 
 -----------------------------------------------------------------------
 ## Instruction to compile:
 
 ####Command: ant -buildfile coursesRegistration/src/build.xml all
 
-Description: Compiles your code and generates .class files inside the BUILD folder.
+Description: Compiles code and generates .class files inside the BUILD 
+folder.
 
 -----------------------------------------------------------------------
 ## Instruction to run:
 
-####Command: ant -buildfile coursesRegistration/src/build.xml run -Darg0=<input_file.txt> -Darg1=<delete_file.txt> -Darg2=<output1_file.txt> -Darg3=<output2_file.txt> -Darg4=<output3_file.txt>
-
+####Command: ant -buildfile coursesRegistration/src/build.xml run -Darg0=<input_file1.txt> -Darg1=<input_file2.txt> 
 Note: Arguments accept the absolute path of the files.
-
 
 -----------------------------------------------------------------------
 ## Description:
+Time Complexity is O(n^2)
 
+I have used ArrayList of type class Courses to store course details.
+Switch case is used to get course preferences in a loop and then 
+schedule them in class Allocation.
+Results are stored in Class Results with arrayList of type class
+Registration.
+
+Implemented methods interfaces in Results class. 
 
 -----------------------------------------------------------------------
 ### Academic Honesty statement:
@@ -43,6 +52,6 @@ I am involved in plagiarism or cheating an official form will be
 submitted to the Academic Honesty Committee of the Watson School to
 determine the action that needs to be taken. "
 
-Date: 09/18/2018
+Date: 09/21/2018
 
 
